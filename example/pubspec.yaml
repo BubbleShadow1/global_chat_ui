@@ -1,0 +1,13 @@
+name: global_chat_example
+publish_to: none
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  global_chat:
+    path: ../
+dev_dependencies:
+  flutter_lints: ^4.0.0
+flutter:
+  uses-material-design: true
