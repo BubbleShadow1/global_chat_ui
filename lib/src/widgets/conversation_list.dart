@@ -2,14 +2,22 @@ import 'package:flutter/material.dart';
 import '../controller/chat_controller.dart';
 import '../models/chat_models.dart';
 
+/// An inbox-style list of conversations managed by a [ChatController].
 class ConversationList extends StatelessWidget {
+  /// Creates a sorted inbox-style list of the controller's conversations.
   const ConversationList(
       {super.key,
       required this.controller,
       required this.onConversationTap,
       this.emptyBuilder});
+
+  /// Controller containing the conversations to display.
   final ChatController controller;
+
+  /// Invoked when a user chooses a conversation.
   final ValueChanged<ChatConversation> onConversationTap;
+
+  /// Optional replacement UI shown when there are no conversations.
   final WidgetBuilder? emptyBuilder;
   @override
   Widget build(BuildContext context) => AnimatedBuilder(

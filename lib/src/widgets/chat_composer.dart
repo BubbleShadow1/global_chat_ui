@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../models/chat_models.dart';
 
+/// Editable message input with optional host-supplied action controls.
 class ChatComposer extends StatefulWidget {
+  /// Creates a text composer with optional host-provided actions.
   const ChatComposer(
       {super.key,
       required this.onSend,
@@ -9,10 +11,20 @@ class ChatComposer extends StatefulWidget {
       this.trailingActions = const [],
       this.replyTo,
       this.onCancelReply});
+
+  /// Receives non-empty trimmed text when the user sends a message.
   final ValueChanged<String> onSend;
+
+  /// Widgets rendered before the text input.
   final List<Widget> leadingActions;
+
+  /// Widgets rendered after the text input and before Send.
   final List<Widget> trailingActions;
+
+  /// Message currently quoted by the composer, if any.
   final ChatMessage? replyTo;
+
+  /// Invoked when the user removes the reply quote.
   final VoidCallback? onCancelReply;
   @override
   State<ChatComposer> createState() => _ChatComposerState();

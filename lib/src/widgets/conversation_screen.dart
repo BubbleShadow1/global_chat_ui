@@ -4,7 +4,9 @@ import '../models/chat_models.dart';
 import '../theme/chat_theme.dart';
 import 'chat_composer.dart';
 
+/// A complete message timeline and composer for one conversation.
 class ConversationScreen extends StatefulWidget {
+  /// Creates a complete conversation screen for [conversationId].
   const ConversationScreen(
       {super.key,
       required this.controller,
@@ -17,7 +19,11 @@ class ConversationScreen extends StatefulWidget {
       this.showSearch = true,
       this.onMessageTap,
       this.onMessageDoubleTap});
+
+  /// Controller that owns conversation data and host action callbacks.
   final ChatController controller;
+
+  /// ID of the conversation displayed by this screen.
   final String conversationId;
 
   /// Host-owned controls, such as calls, profile, or settings.
@@ -27,13 +33,24 @@ class ConversationScreen extends StatefulWidget {
   /// Host-owned composer controls, such as attachment, voice, GIF, or emoji.
   final List<Widget> Function(BuildContext context, ChatConversation chat)?
       composerActionsBuilder;
+
+  /// Enables the built-in horizontal swipe-to-reply gesture.
   final bool enableSwipeToReply;
+
+  /// Optional per-screen override for bubble styling.
   final ChatBubbleStyle? bubbleStyle;
+
+  /// Optional per-screen override for animations.
   final ChatAnimations? animations;
 
   /// Shows search by default. Set false to remove the search UI.
   final bool showSearch;
-  final ValueChanged<ChatMessage>? onMessageTap, onMessageDoubleTap;
+
+  /// Called when a message bubble is tapped.
+  final ValueChanged<ChatMessage>? onMessageTap;
+
+  /// Called when a message bubble is double-tapped.
+  final ValueChanged<ChatMessage>? onMessageDoubleTap;
   @override
   State<ConversationScreen> createState() => _ConversationScreenState();
 }

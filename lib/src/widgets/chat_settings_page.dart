@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import '../controller/chat_controller.dart';
 import '../models/chat_models.dart';
 
+/// A settings page for editing [ChatController.settings].
 class ChatSettingsPage extends StatelessWidget {
+  /// Creates a settings screen bound to [controller].
   const ChatSettingsPage({super.key, required this.controller});
+
+  /// Controller whose [ChatController.settings] this page displays and edits.
   final ChatController controller;
   @override
   Widget build(BuildContext context) => AnimatedBuilder(

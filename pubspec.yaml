@@ -1,6 +1,6 @@
 name: global_chat
 description: Global Chat is a backend-agnostic, highly configurable Flutter chat UI toolkit.
-version: 0.1.0
+version: 0.2.0
 homepage: https://pub.dev/packages/global_chat
 topics:
   - chat
